@@ -16,7 +16,7 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/produit")
+    @GetMapping("/prod")
     public String produit(Model model) {
         Produit produit = new Produit("Livre", "Livre de 50 pages", 14.99);
         model.addAttribute("produit", produit);
