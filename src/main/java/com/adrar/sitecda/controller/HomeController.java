@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class HomeController {
@@ -20,5 +21,11 @@ public class HomeController {
         Produit produit = new Produit("Livre", "Livre de 50 pages", 14.99);
         model.addAttribute("produit", produit);
         return "produit";
+    }
+
+    @GetMapping("/helloworld/{firstname}")
+    public String helloworldFirstname(Model model, @PathVariable String firstname) {
+        model.addAttribute("prenom", firstname);
+        return "hellofirstname";
     }
 }
