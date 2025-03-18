@@ -20,4 +20,8 @@ public class CategorieService {
     public Categorie getCategorieById(Long id) {
         return categorieRepository.findById(id).get();
     }
+
+    public Categorie saveCategorie(Categorie categorie) {
+        return categorieRepository.save(categorie);
+    }
 }
