@@ -14,6 +14,10 @@ public class Produit {
     @Column(name = "prix", nullable = false)
     private Double price;
 
+    @ManyToOne
+    @JoinColumn(name = "categorie_id")
+    private Categorie categorie;
+
     public Produit() {
     }
 
@@ -52,5 +56,12 @@ public class Produit {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public Categorie getCategorie() {
+        return categorie;
+    }
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
     }
 }
